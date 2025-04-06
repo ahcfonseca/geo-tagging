@@ -39,6 +39,14 @@ export const MarkerProvider: React.FC<{ children: React.ReactNode }> = ({
   const removeMarker = (id: string) => {
     setMarkers((prev) => prev.filter((m) => m.id !== id));
     setActiveMarker(null);
+
+    // here we rename the markers after removing one to keep the order consistent
+    setMarkers((prev) =>
+      prev.map((m, index) => ({
+        ...m,
+        name: `Ponto nº ${String(index + 1).padStart(3, "0")}`,
+      }))
+    );
   };
 
   const clearMarkers = () => {
