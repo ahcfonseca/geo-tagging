@@ -27,6 +27,7 @@ export const MarkerItem = ({ marker }: MarkerItemProps) => {
     } else {
       alert("Não é possível mover o marcador para fora da área demarcada.");
       moveMarker(marker.id, prevPosition);
+      setPrevPosition(marker.position);
     }
   };
 
