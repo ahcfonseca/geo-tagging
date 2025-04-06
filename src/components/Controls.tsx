@@ -1,10 +1,10 @@
+import { useState } from "react";
 import { useMarkerContext } from "../context/MarkerContext";
+import { DEFAULT_LOCATION_LAT, DEFAULT_LOCATION_LNG } from "../lib/constants";
+import ConfirmationModal from "./ConfirmationModal";
 import Button from "./ui/Button";
 import MarkerIcon from "./ui/icons/MarkerIcon";
 import TrashIcon from "./ui/icons/TrashIcon";
-import { DEFAULT_LOCATION_LAT, DEFAULT_LOCATION_LNG } from "../lib/constants";
-import ConfirmationModal from "./ConfirmationModal";
-import { useState } from "react";
 
 function Controls() {
   const [isConfirmationModalOpen, setIsConfirmationModalOpen] = useState(false);

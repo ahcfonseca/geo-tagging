@@ -1,8 +1,8 @@
 import { GoogleMap, PolygonF, useLoadScript } from "@react-google-maps/api";
 import { useCallback, useRef } from "react";
+import { useMarkerContext } from "../context/MarkerContext";
 import { GOOGLE_MAPS_API } from "../lib/constants";
 import { getPolygonPath } from "../utils/getPolygonFromGeoJSON";
-import { useMarkerContext } from "../context/MarkerContext";
 import { MarkerItem } from "./MarkerItem";
 /* import { useIsInsidePolygon } from "../hooks/useIsInsidePolygon"; */
 
