@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import { MarkerType } from "../lib/types";
 
 interface MarkerContextProps {
@@ -21,7 +22,7 @@ export const MarkerProvider: React.FC<{ children: React.ReactNode }> = ({
 
   const addMarker = (position: MarkerType["position"]) => {
     const newMarker: MarkerType = {
-      id: crypto.randomUUID(),
+      id: uuidv4(),
       position,
       createdAt: new Date(),
       name: `Ponto nº ${String(markers.length + 1).padStart(3, "0")}`,
