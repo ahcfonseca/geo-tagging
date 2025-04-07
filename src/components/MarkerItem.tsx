@@ -1,11 +1,11 @@
 import { Marker } from "@react-google-maps/api";
-import { MarkerType } from "../lib/types";
-import { useMarkerContext } from "../context/MarkerContext";
-import { getPolygonPath } from "../utils/getPolygonFromGeoJSON";
 import { useState } from "react";
-import { useIsInsidePolygon } from "../hooks/useIsInsidePolygon";
 import moveOffIcon from "../assets/move-off.svg";
 import moveOnIcon from "../assets/move-on.svg";
+import { useMarkerContext } from "../context/MarkerContext";
+import { useIsInsidePolygon } from "../hooks/useIsInsidePolygon";
+import { MarkerType } from "../lib/types";
+import { getPolygonPath } from "../utils/getPolygonFromGeoJSON";
 
 type MarkerItemProps = {
   marker: MarkerType;

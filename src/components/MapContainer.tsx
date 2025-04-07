@@ -73,7 +73,7 @@ const MapContainer = () => {
           fillOpacity: 0.4,
           strokeColor: "#ffffff",
           strokeWeight: 2,
-          strokeOpacity: 0.8,
+          strokeOpacity: 1,
           clickable: false,
           editable: false,
           draggable: false,
