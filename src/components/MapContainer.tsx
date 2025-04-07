@@ -4,7 +4,6 @@ import { useMarkerContext } from "../context/MarkerContext";
 import { GOOGLE_MAPS_API } from "../lib/constants";
 import { getPolygonPath } from "../utils/getPolygonFromGeoJSON";
 import { MarkerItem } from "./MarkerItem";
-/* import { useIsInsidePolygon } from "../hooks/useIsInsidePolygon"; */
 
 const containerStyle = {
   width: "100%",
@@ -30,7 +29,7 @@ const MapContainer = () => {
     [libraries]: libraries,
   });
 
-  const { markers, /* addMarker, */ setActivePoint } = useMarkerContext();
+  const { markers, setActivePoint } = useMarkerContext();
 
   const mapRef = useRef<google.maps.Map | null>(null);
 
@@ -39,20 +38,6 @@ const MapContainer = () => {
   }, []);
 
   const polygonPoints = getPolygonPath();
-  /* const isInsidePolygon = useIsInsidePolygon(polygonPoints); */
-
-  /* const handleClick = (e: google.maps.MapMouseEvent) => {
-    setActivePoint(null);
-    if (e.latLng) {
-      const lat = e.latLng.lat();
-      const lng = e.latLng.lng();
-      if (isInsidePolygon(lat, lng)) {
-        addMarker({ lat, lng });
-      } else {
-        alert("Não é possível adicionar o marcador fora da área demarcada.");
-      }
-    }
-  }; */
 
   if (!isLoaded) return <div>Loading...</div>;
 
